@@ -61,6 +61,15 @@ h1 {
   margin: 0;
 }
 
+#filterDropdown {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 /* Add responsiveness */
 @media (max-width: 768px) {
   .recipeCard {
