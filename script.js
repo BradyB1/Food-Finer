@@ -23,7 +23,7 @@ const recipes = [
   {
     id: 2,
     name: "Chicken Curry",
-    type: "Asian",
+    type: ["Asian"],
     image: "https://via.placeholder.com/150",
     description: "A spicy and flavorful chicken curry made with Indian spices.",
     ingredients: ["Chicken", "Curry powder", "Coconut milk", "Onion", "Garlic"],
@@ -38,7 +38,7 @@ const recipes = [
   {
     id: 3,
     name: "Caesar Salad",
-    type: "Italian",
+    type: ["Italian"],
     image: "https://via.placeholder.com/150",
     description:
       "A fresh salad with romaine lettuce, croutons, and Caesar dressing.",
@@ -55,6 +55,18 @@ const recipes = [
     ],
   },
   // Add more recipes
+  {
+    id: 4,
+    name: "Pickles",
+    type: ["Side"],
+    image: "https://via.placeholder.com/150",
+    description: "Some pickles that burn fingers.",
+    ingredients: [
+      "Cucumbers: 8 cups",
+      "Apple Cider Vinegar: 1 cup",
+      "Ice Cold Water: 4 cups",
+    ],
+  },
 ];
 
 // Initialize Fuse.js options
@@ -87,31 +99,33 @@ function displayRecipes(recipesToDisplay) {
   });
 }
 
-// Display all recipes by default
-displayRecipes(recipes);
-
 // Function to filter recipes by type
 function filterRecipes(type) {
-  if (type === "" || type === null) {
+  if (type === "All" || type === "" || type === null) {
     return recipes;
   } else {
-    return recipes.filter((recipe) => recipe.type === type);
+    return recipes.filter((recipe) => recipe.type.includes(type));
   }
 }
 
 // Event listener for search bar and filter dropdown
 function updateRecipes() {
-  const searchString = searchBar.value;
+  const searchString = searchBar.value.trim();
   const selectedType = filterDropdown.value;
 
   let filteredRecipes = filterRecipes(selectedType);
 
-  if (searchString.trim() !== "") {
-    filteredRecipes = fuse.search(searchString).map((result) => result.item);
+  if (searchString !== "") {
+    const searchResults = fuse
+      .search(searchString)
+      .map((result) => result.item);
     // Further filter by type after the Fuse search
-    filteredRecipes = filteredRecipes.filter(
-      (recipe) => recipe.type === selectedType || selectedType === ""
+    filteredRecipes = searchResults.filter(
+      (recipe) => recipe.type.includes(selectedType) || selectedType === "All"
     );
+  } else {
+    // If the search string is empty, use the filtered recipes by type
+    filteredRecipes = filterRecipes(selectedType);
   }
 
   displayRecipes(filteredRecipes);
@@ -119,3 +133,6 @@ function updateRecipes() {
 
 searchBar.addEventListener("input", updateRecipes);
 filterDropdown.addEventListener("change", updateRecipes);
+
+// Initial display
+updateRecipes();

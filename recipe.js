@@ -55,6 +55,19 @@ const recipes = [
       "Sprinkle with Parmesan cheese and serve.",
     ],
   },
+  {
+    id: 4,
+    name: "Pickles",
+    type: ["Side"],
+    image: "https://via.placeholder.com/150",
+    description: "some pickles that burn fingers",
+    ingredients: [
+      "Cucumbers: 8 cups",
+      "Apple Cider Vinegar: 1 cup",
+      "Ice Cold Water: 4 Cups",
+    ],
+    steps: ["don't burn your fucking fingers", "use a towel"],
+  },
   // Add more recipes
 ];
 
