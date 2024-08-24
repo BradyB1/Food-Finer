@@ -1,0 +1,56 @@
+{
+  
+  "id": 1,
+  "name": "Spaghetti Bolognese",
+  "type": "Italian",
+ " image": "https://via.placeholder.com/150",
+  "description": "A classic Italian pasta dish with a rich, meaty sauce.",
+  "ingredients": [
+    "Spaghetti",
+    "Ground beef",
+    "Tomato sauce",
+    "Onion",
+    "Garlic",
+  ],
+  "steps": [
+    "Cook spaghetti according to package instructions.",
+    "In a pan, cook ground beef until browned.",
+    "Add chopped onions and garlic, and cook until softened.",
+    "Stir in tomato sauce and simmer.",
+    "Combine sauce with spaghetti and serve.",
+  ],
+},
+{
+  "id": 2,
+  "name": "Chicken Curry",
+  "type": "Asian",
+  "image": "https://via.placeholder.com/150",
+  "description": "A spicy and flavorful chicken curry made with Indian spices.",
+  "ingredients": ["Chicken", "Curry powder", "Coconut milk", "Onion", "Garlic"],
+  "steps": [
+    "Heat oil in a pan and cook chopped onions and garlic until golden.",
+    "Add curry powder and cook for another minute.",
+    "Add chicken pieces and cook until browned.",
+    "Pour in coconut milk and simmer until chicken is cooked through.",
+    "Serve with rice.",
+  ],
+},
+{
+  "id": 3,
+  "name": "Caesar Salad",
+  "type": "Italian",
+  "image": "https://via.placeholder.com/150",
+  "description":
+    "A fresh salad with romaine lettuce, croutons, and Caesar dressing.",
+  "ingredients": [
+    "Romaine lettuce",
+    "Croutons",
+    "Caesar dressing",
+    "Parmesan cheese",
+  ],
+  "steps": [
+    "Tear lettuce into bite-sized pieces.",
+    "Toss with Caesar dressing and croutons.",
+    "Sprinkle with Parmesan cheese and serve.",
+  ],
+},

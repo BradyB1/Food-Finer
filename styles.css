@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  text-decoration: none;
 }
 
 .container {
@@ -33,6 +34,7 @@ h1 {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  text-decoration: none;
 }
 
 .recipeCard {
@@ -69,6 +71,58 @@ h1 {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+a { 
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  background-color: #5e5d5d; /* Primary button color */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: black; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#recipeDetails {
+  text-align: center;
+}
+
+#recipeDetails img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#recipeDetails h1 {
+  margin-top: 20px;
+}
+
+#recipeDetails h2 {
+  margin-top: 20px;
+}
+
+#recipeDetails ul,
+#recipeDetails ol {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 
 /* Add responsiveness */
 @media (max-width: 768px) {
