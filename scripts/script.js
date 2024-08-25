@@ -1,5 +1,5 @@
 // Fetch the recipes from the JSON file
-fetch("/recipes.json")
+fetch("/public/recipes.json")
   .then((response) => response.json())
   .then((recipes) => {
     // Initialize Fuse.js options
