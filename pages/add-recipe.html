@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add a New Recipe</h2>
+        <form id="addRecipeForm">
+            <label for="name">Recipe Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="type">Type:</label>
+            <select id="type">
+                <option value="">Select Type</option>
+                <option value="Appetizers">Appetizers</option>
+                <option value="Soups & Salads">Soups & Salads</option>
+                <option value="Breads">Breads</option>
+                <option value="Main Dishes">Main Dishes</option>
+                <option value="Sides">Sides</option>
+                <option value="This 'n That">This 'n That</option>
+                <option value="Desserts & Salads">Desserts & Salads</option>
+            </select>
+            
+            <label for="ethnicity">Ethnicity:</label>
+            <select id="ethnicity">
+                <option value="">Select Ethnicity</option>
+                <option value="Italian">Italian</option>
+                <option value="Mexican">Mexican</option>
+                <!-- Add other ethnicities as needed -->
+            </select>
+            
+            <label for="foodGroup">Food Group:</label>
+            <select id="foodGroup">
+                <option value="">Select Food Group</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Meats">Meats</option>
+                <!-- Add other food groups as needed -->
+            </select>
+            
+            <label for="image">Image URL:</label>
+            <input type="text" id="image">
+            
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4"></textarea>
+            
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" rows="4"></textarea>
+            
+            <label for="steps">Steps:</label>
+            <textarea id="steps" rows="4"></textarea>
+            
+            <button type="submit">Add Recipe</button>
+        </form>
+        <button id="backButton">Back</button>
+    </div>
+    <script src="/api/add-recipe.js"></script>
+</body>
+</html>

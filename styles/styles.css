@@ -8,11 +8,32 @@ body {
 
 .container {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 0px auto;
   padding: 20px;
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  width: 90%;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#addRecipeButton {
+  padding: 8px 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#addRecipeButton:hover {
+  background-color: #0056b3;
 }
 
 h1 {
