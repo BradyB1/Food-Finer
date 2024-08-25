@@ -12,13 +12,37 @@
         <h1>Recipe Finder</h1>
         <input type="text" id="searchBar" placeholder="Search for recipes...">
         
-        <!-- Filter dropdown with placeholder effect -->
+        <!-- Filter dropdown for type -->
         <select id="filterDropdown">
-            <option value="" disabled selected>Filter</option>
+            <option value="" disabled selected>Filter by Type</option>
+            <option value="All">All</option>
+            <option value="Appetizers">Appetizers</option>
+            <option value="Soups & Salads">Soups & Salads</option>
+            <option value="Breads">Breads</option>
+            <option value="Main Dishes">Main Dishes</option>
+            <option value="Sides">Sides</option>
+            <option value="This 'n That">This 'n That</option>
+            <option value="Desserts & Salads">Desserts & Salads</option>
+        </select>
+
+        <!-- Filter dropdown for ethnicity -->
+        <select id="ethnicityDropdown">
+            <option value="" disabled selected>Filter by Ethnicity</option>
             <option value="All">All</option>
             <option value="Italian">Italian</option>
-            <option value="Asian">Asian</option>
             <option value="Mexican">Mexican</option>
+            <option value="Asian">Asian</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <!-- Filter dropdown for food groups -->
+        <select id="foodGroupDropdown">
+            <option value="" disabled selected>Filter by Food Group</option>
+            <option value="All">All</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Meats">Meats</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value ="Salads">Salads</option>
             <!-- Add more options as needed -->
         </select>
 
