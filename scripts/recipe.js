@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const recipeId = parseInt(urlParams.get("id"));
 
   // Fetch recipes from the JSON file
-  fetch("/assets/recipes.json")
+  fetch("/pages/recipes.json")
     .then((response) => response.json())
     .then((recipes) => {
       // Find the recipe with the matching id
