@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "fs/promises";
 import path from "path";
 
-const recipesFilePath = path.resolve("public", "recipes.json");
+const recipesFilePath = path.resolve("assets", "recipes.json");
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
