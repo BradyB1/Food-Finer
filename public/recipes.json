@@ -25,7 +25,23 @@
       "Pour over chex + mix",
       "Put in oven bake in a slow over 225° for 1-2 hours until crisp, stiring often"
     ]
+  },
+  {
+    "id": 2,
+    "name": "Another Recipe",
+    "type": ["Main Dishes"],
+    "ethnicity": ["Italian"],
+    "foodGroup": ["Pasta"],
+    "image": "",
+    "description": "A delicious pasta dish with rich flavors.",
+    "ingredients": [
+      "200g pasta",
+      "1 tbsp olive oil",
+      "2 cloves garlic"
+    ],
+    "steps": [
+      "Boil pasta until al dente.",
+      "Heat oil in a pan and sauté garlic."
+    ]
   }
-  
-
 ]
