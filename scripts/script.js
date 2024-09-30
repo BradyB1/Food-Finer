@@ -17,6 +17,10 @@ fetch("/recipes.json")
     const foodGroupDropdown = document.getElementById("foodGroupDropdown");
     const recipeContainer = document.getElementById("recipeContainer");
 
+    document.getElementById("addRecipeButton").addEventListener("click", () => {
+      window.location.href = "add-recipe.html";
+    });
+
     // Function to display recipes
     function displayRecipes(recipesToDisplay) {
       recipeContainer.innerHTML = "";

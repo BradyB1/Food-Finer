@@ -1,37 +1,43 @@
-import { readFile, writeFile } from "fs/promises";
-import path from "path";
+document.addEventListener("DOMContentLoaded", () => {
+  // Handle the form submission
+  const addRecipeForm = document.getElementById("addRecipeForm");
+  addRecipeForm.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
 
-const recipesFilePath = path.resolve("/recipes.json");
+    const newRecipe = {
+      name: document.getElementById("name").value,
+      type: document.getElementById("type").value,
+      ethnicity: document.getElementById("ethnicity").value,
+      foodGroup: document.getElementById("foodGroup").value,
+      image: document.getElementById("image").value,
+      description: document.getElementById("description").value,
+      ingredients: document.getElementById("ingredients").value,
+      steps: document.getElementById("steps").value,
+    };
 
-export default async function handler(req, res) {
-  if (req.method === "POST") {
     try {
-      // Read the existing recipes
-      let recipes = [];
-      try {
-        const data = await readFile(recipesFilePath, "utf-8");
-        recipes = JSON.parse(data);
-      } catch (error) {
-        // File might not exist, that's okay
+      const response = await fetch("/api/add-recipe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newRecipe),
+      });
+
+      if (response.ok) {
+        alert("Recipe added successfully!");
+        window.location.href = "index.html"; // Redirect to index.html after adding recipe
+      } else {
+        alert("Error adding recipe");
       }
-
-      // Add the new recipe
-      const newRecipe = req.body;
-      recipes.push(newRecipe);
-
-      // Write back to the recipes file
-      await writeFile(
-        recipesFilePath,
-        JSON.stringify(recipes, null, 4),
-        "utf-8"
-      );
-
-      res.status(200).json({ message: "Recipe added successfully!" });
     } catch (error) {
-      res.status(500).json({ error: "Error adding recipe" });
+      alert("Error adding recipe");
     }
-  } else {
-    res.setHeader("Allow", ["POST"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-}
+  });
+
+  // Event listener for Back button
+  const backButton = document.getElementById("backButton");
+  backButton.addEventListener("click", () => {
+    window.location.href = "index.html"; // Navigate to index.html
+  });
+});
